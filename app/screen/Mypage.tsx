@@ -1,39 +1,23 @@
 import { useNavigation } from "expo-router";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import styled from "styled-components/native";
 
 export default function Mypage() {
   const navigation = useNavigation();
   return (
-    <View style={Styles.container}>
-      <Text style={Styles.HomeText}>마이페이지</Text>
-      {/* <TouchableOpacity onPress={() => navigation.navigate("", { screen: '' })} style={Styles.NextBottom}
-        >
-        <Text style={Styles.BottomText}></Text>
-      </TouchableOpacity> */}
-    </View>
-  )
+    <S.Container>
+      <S.HomeText>마이페이지</S.HomeText>
+    </S.Container>
+  );
 }
 
-const Styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-  },
-  HomeText: {
-    fontSize: 30,
-    textAlign: "center",
-  },
-  NextBottom: {
-    backgroundColor: "purple",
-    padding: 10,
-    marginTop: "20%",
-    width: "50%",
-    alignSelf: "center",
-    borderRadius: 10,
-  },
-  BottomText: {
-    fontSize: 15,
-    color: 'white',
-    textAlign: "center",
-  }
-})
+namespace S {
+  export const Container = styled.View`
+    flex: 1;
+    background-color: #fff;
+  `;
+
+  export const HomeText = styled.Text`
+    font-size: 30px;
+    text-align: center;
+  `;
+}
