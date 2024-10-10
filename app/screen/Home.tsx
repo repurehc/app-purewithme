@@ -1,10 +1,10 @@
 import { useNavigation } from "@react-navigation/native";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { Text } from "react-native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import styled from "styled-components/native";
 
 type RootStackParamList = {
-  Signin: { screen: string } | undefined;
+  Signup: { screen: string } | undefined;
 };
 
 export default function Home() {
@@ -14,7 +14,7 @@ export default function Home() {
     <S.Container>
       <S.HomeText>홈페이지</S.HomeText>
       <S.NextBottom
-        onPress={() => navigation.navigate("Signin", { screen: "Signin" })}
+        onPress={() => navigation.navigate("Signup", { screen: "Signup" })}
       >
         <Text>로그인 화면으로</Text>
       </S.NextBottom>
